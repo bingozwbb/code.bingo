@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>talk in js-代理模式</title>
+</head>
+<body>
+ <script>
+     //object
+     //描述的方式对象是怎样出现
+     //对象字面量 JSON Object
+    const bingo ={
+        name: '狗哥',
+        age: 21,
+        single: true,
+        hometown: "抚州",
+        room: 218,
+        yz: 100,
+        //上面的属性
+        //函数功能 行为 
+        //target 形参
+        sendFlower: function(target) {
+           //console.log(target.name);
+           target.receiveFlower(bingo);
+        }
+    };
+    const ice = {
+        name: '冰冰',
+        age: 20,
+        mood: 50,
+        receiveFlower: function(sender){
+            //如果心情指数大于80 收花
+             
+            if(ice.mood > 80){
+                console.log("mua");
+            }
+            else{
+                console.log("get away")
+            }
+           // console.log('收到花');
+        },
+        ListenGoodMood: function(){
+            //心情不好
+            //定时器
+            //console.log("本公主谁都不想见")
+            setTimeout(function() {
+                ice.mood > 80
+                //console.log("本公主心情好");
+            ice.receiveFlower();
+            }, 3000);
+        }
+    }
+    //送花 A->B A->C->B
+    //A 送花 send_flower
+    //C 收花 转送给B
+    //B 收花 receive_flower
+
+    const icee = {
+        name: "冰冰冰",
+        //与冰冰实现了同样的接口
+        receiveFlower: function(sender){
+        //心情好，再送
+
+            /*if (sender.name === "狗哥"){
+                console.log("和我在一起");
+            }
+            else{
+                icee.receiveFlower();
+            }*/
+       // ice.receiveFlower(sender);
+       //代理者，监听下冰冰的心情
+       ice.ListenGoodMood()
+        }
+
+    }
+ </script>   
+
+
+</body>
+</html>

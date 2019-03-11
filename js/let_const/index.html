@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var name = "喻晗";
+   // var dl = null;
+    function dlName() {
+        //局部变量 函数局部作用域
+        //函数运行时诞生
+        var dl = "bingo";
+        //运行结束后回收
+    }
+    // 块级作用域
+    if (true) {
+       const csygls = "ice";//es6的变量声明会遵从块级作用域
+    }
+    for (let i = 0; i < 10; i++) {
+    console.log(i);
+    setTimeout(function() {
+    console.log("The number is" + i)
+    }, 1000);
+    }
+    coneole.log(csygls);
+    </script>
+</body>
+</html>
