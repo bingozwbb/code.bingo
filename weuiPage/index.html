@@ -12,16 +12,37 @@
         <div class="page button js_show">
             <div class="page__bd page__bd_spacing">
             <a href="#" class="weui-btn 
-             weui-btn_primary">页面主操作 normal</a>
-            <a href="#" class="weui-btn weui-btn_prinmary 
-            weui-btn_loading">
+             weui-btn_primary" id='primary'>页面主操作 normal</a>
+            <a href="#" class="weui-btn weui-btn_primary 
+            weui-btn_loading" id="loading">
             <i class="weui-loading"></i>
             页面主操作 loading</a>
             <a href="#" class="weui-btn 
             weui-btn_disabled">页面主操作 Disabled</a>
+            <a href="#" class="weui-btn weui-btn_default">hi!</a>
             </div>
         </div>
     </div>
-    
+    <script>
+      var oLoading = document.getElementById("loading")
+      console.log(oLoading)
+      oLoading.onclick = function () {
+         //console.log("123")
+         this.innerHTML = "good!"  
+      }
+      var oPrimary = document.getElementById("primary");
+      oPrimary.onclick = function () {
+          this.classList.add("active");
+        //   var _this = this ;
+        //   setTimeout(function () {
+        //   console.log(this);
+        //   _this.classList.remove("active");
+        //   }, 2000)
+        setTimeout(() => {
+            this.classList.remove("active")
+        }, 2000);
+      }
+     
+    </script>
 </body>  
 </html>
