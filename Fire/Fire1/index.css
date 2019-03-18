@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+}
+.page {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.page-header {
+    width: 100%;
+}
+.page-header__pic {
+    width: 100%;
+    height: 200px;
+    background: url(./bingo.jpg) no-repeat;
+    background-size: contain;
+}
+.page-header__userinfo {
+    padding: 10px 10px 13px 10px;
+    position: relative;
+}
+.name {
+    line-height: 1;
+}
+.labels {
+    margin-top: 10px;
+
+}
+.label {
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+
+}
+.blue {
+    background: #48A6FD;
+}
+.green {
+    background: #1DCA42;
+}
+.orange {
+    background: #FB8800;
+}
+.page-header__msg {
+    margin-top: 10px;
+}
+
+.item {
+    width: 95px;
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+}
+.city::before {
+    content: '';
+    width: 20px;
+    height: 18px;
+    background: url('./location.png');
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.job::before {
+    content: '';
+    width: 20px;
+    height: 18px;
+    background: url('./zhiye.png');
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.like::before {
+    content: '';
+    width: 20px;
+    height: 18px;
+    background: url('./aixin.png');
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.wechat::before {
+    content: '';
+    width: 20px;
+    height: 18px;
+    background: url('./weixin.png');
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.phone::before {
+    content: '';
+    width: 20px;
+    height: 18px;
+    background: url('./phone.png');
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.ewm {
+    width: 34px;
+    height: 33px;
+    position: absolute;
+    top: 32px;
+    right: 11px;
+}
+.ewm img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.evp {
+    width: 55px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 4px;
+}
+.evp img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
