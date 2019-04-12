@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="item" data-flag="0">
+            <img src="https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg" alt="" class="icon">
+            <span class="count">99</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="item"  data-flag="0">
+            <img src="https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg" alt="" class="icon">
+            <span class="count">99</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="item"  data-flag="0">
+            <img src="https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg" alt="" class="icon">
+            <span class="count">99</span>
+        </div>
+    </div>
+    <script>
+        const like = 'https://b-gold-cdn.xitu.io/v3/static/img/zan-active.930baa2.svg'
+        const disLike = 'https://b-gold-cdn.xitu.io/v3/static/img/zan.e9d7698.svg'
+        const items = document.querySelectorAll('.item')
+        for (let i = 0; i < items.length; i++) {
+            items[i].addEventListener('click', function () {
+                const img = items[i].querySelector('img');
+                const count = items[i].querySelector('.count');
+                countNumber = parseInt(countNumber);
+                // data-flag
+                const flag = items[i].dataset.flag
+
+                // 点赞
+                if (!flag === '0') {
+                    countNumber += 1;
+                    img.src = Like;
+                    count.classList.add('active');
+                } else {
+                    countNumber -= 1;
+                    img.src = disLike;
+                    count.classList.remove('active');
+                }
+                //flag = !flag;
+                items[i].dataset.flag = '1';
+                count.innerHTML = countNumber;
+            })
+        }
+        // version 1
+    //     const item = document.querySelector('.item')
+    //     let flag = false;
+    //     item.addEventListener('click', function () {
+    //         const img = item.querySelector('img');
+    //         const count = item.querySelector('.count');
+    //         let countNumber = count.innerHTML;
+    //         countNumber = parseInt(countNumber);
+    //         // 点赞
+    //         if (!flag) {
+    //             countNumber += 1;
+    //             img.src = Like;
+    //             count.classList.add('active');
+    //         } else {
+    //             countNumber -= 1;
+    //             img.src = disLike;
+    //             count.classList.remove('active');
+    //         }
+    //         flag = !flag;
+
+    //         count.innerHTML = countNumber;
+
+
+
+    //     })
+    </script>
+       <!-- <script src="./index.css"></script> -->
+</body>
+
+</html>
