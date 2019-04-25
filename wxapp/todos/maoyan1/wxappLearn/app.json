@@ -5,10 +5,10 @@
     "pages/mine/index"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#aaa",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#48A6FD",
     "navigationBarTitleText": "旅梦开发团",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#515151",
