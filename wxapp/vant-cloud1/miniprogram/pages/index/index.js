@@ -1,4 +1,6 @@
 // miniprogram/pages/index/index.js
+import Dialog from '../dist/dialog/dialog';
+
 import Notify from '../dist/notify/index.js';
 Page({
 
@@ -40,7 +42,33 @@ Page({
       self.selectComponent('#new-group-modal').stopLoading()
       return
     }else{
-      
+      wx.cloud.callFunction({
+        name: 'createGroup',
+        data: {
+          groupName: self.data.groupName
+        },
+        success(res) {
+          self.setData({
+            newGoupModal: false,
+            groupName: ''
+          })
+          Notify({
+            text: '新建成功',
+            duration: 1500,
+            selector: '#notify-selector',
+            backgroundColor: '#28a745'
+          });
+          setTimeout(() => {
+            wx.switchTab({
+              url: '/pages/group/group'
+            })
+          })
+
+        },
+        fail() {
+          console.log(error)
+        }
+      })
     }
   },
   /**
