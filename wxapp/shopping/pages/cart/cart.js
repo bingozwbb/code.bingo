@@ -7,7 +7,8 @@ Page({
   data: {
     hasList: false,
     carts: [],
-    selectAllStatus: true
+    selectAllStatus: true,
+    totalPrice: true
     
   },
 
@@ -39,6 +40,7 @@ Page({
 
 
       })
+      this.getTotalPrice()
     }, 1000)
   },
 
@@ -58,6 +60,60 @@ Page({
     })
   },
 
+  getTotalPrice() {
+    let carts = this.data.carts
+    let total = 0
+    for (let i = 0; i < carts.length; i++) {
+      if (carts[i].selected){
+        total += carts[i].num * carts[i].price
+      }
+    }
+    this.setData({
+      totalPrice: total.toFixed(2)
+    })
+  },
+  minusCount(e) {
+    // console.log(e)
+    const index = e.target.dataset.index
+    let carts = this.data.carts
+    let num = carts[index].num
+    if (num <= 1) {
+      return
+    }
+    num = num - 1
+    carts[index].num = num
+    this.setData({
+      carts: carts
+    })
+    this.getTotalPrice()
+  },
+  addCount(e) {
+    // console.log(e)
+    const index = e.target.dataset.index
+    let carts = this.data.carts
+    let num = carts[index].num
+    num = num + 1
+    carts[index].num = num
+    this.setData({
+      carts: carts
+    })
+    this.getTotalPrice()
+  },
+  deleteList(e) {
+    const index = e.target.dataset.index
+    let carts = this.data.carts
+    carts.splice(index, 1) 
+    this.setData({
+      carts: carts
+    })
+    if (!carts.length){
+      this.setData({
+        hasList: false
+      }) 
+    }else{
+       this.getTotalPrice()
+    }   
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
