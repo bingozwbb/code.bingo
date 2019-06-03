@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "nodemailer": "^6.2.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.32.2",
+    "webpack-dev-server": "^3.5.1"
+  }
+}
