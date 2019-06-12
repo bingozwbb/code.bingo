@@ -2,6 +2,7 @@ const Koa = require('koa');
 // 配置模板引擎 ejs
 const views = require('koa-views');
 const koaStatic = require('koa-static');
+const bodyParser = require('koa-bodyparser');
 const path = require('path');
 // const Koa
 const app = new Koa();
@@ -11,9 +12,12 @@ const {PORT} = require('./config/default.js');
 // router.get('/')
 // router.get('/')
 // router.get('/')
-app.use(koaStatic(path.join(__dirname,'./views')))
+app.use(koaStatic(path.join(__dirname,'./public')))
 app.use(views(path.join(__dirname, './views'), {
     extension: 'ejs'
+}))
+app.use(bodyParser({
+    formLimit: '1mb'
 }))
 app.use(signinRouter.routes());
 app.listen(PORT, () => {
