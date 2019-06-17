@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    function comeTo(person, thing, cb){
+        let msg = `找${person}${thing}城区刚枪`;
+        if (person == 'bingo'){
+            cb(null, msg);
+        } else {
+            cb({err: 'invalid name'}, null);
+        }
+        cb(msg);
+    }
+    // cb callBack
+    comeTo('bingo','吃鸡',(err,msg) => {
+        if (err) return false;
+        console.log(err);
+        console.log(msg);
+        // msg -> 找bingo吃鸡 城区刚枪
+    })
+    comeTo('bingo1','吃鸡',(err,msg) => {
+        if (err) return false;
+        console.log(err);
+        console.log(msg);
+        // msg -> 找bingo吃鸡 城区刚枪
+    })
+    </script>
+</body>
+</html>
